@@ -10,6 +10,9 @@ pt-BR:
       inn_room:
         one: Quarto
         other: Quartos
+      sales:
+        one: Promoção
+        other: Promoções
     attributes:
       inn_owner:
         email: 'E-mail'
@@ -35,3 +38,8 @@ pt-BR:
         guest_limit: 'Máximo de Hóspedes'
         photo: 'Foto'
         daily_rate_cents: 'Valor Diária'
+      sale:
+        name: 'Nome'
+        start_date: 'Data de início'
+        end_date: 'Data de fim'
+        inn_room: 'Quarto'
