@@ -13,7 +13,7 @@
             <%= current_inn_owner.email %>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
+            <li><a class="dropdown-item" href=<%= inn_dashboard_profile_path(current_inn_owner.id) %>>Meu Perfil</a></li>
             <li><hr class="dropdown-divider"></li>
             
             <li><%= button_to 'Sair', destroy_inn_owner_session_path, { method: :delete,  class: 'dropdown-item', form: { "data-turbo": false } } %></li>

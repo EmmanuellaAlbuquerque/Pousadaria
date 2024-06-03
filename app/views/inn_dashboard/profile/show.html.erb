@@ -1,0 +1,29 @@
+<h1>Detalhes do Perfil do Dono da Pousada</h1>
+
+<div class="mt-5">
+  <figure class="figure">
+    <%= image_tag 'no-user-picture.webp', class: "figure-img img-fluid rounded-circle", style: 'width:100px;height:100px', alt: 'Nenhuma foto cadastrada' %>
+    <figcaption class="figure-caption">Nenhuma foto cadastrada.</figcaption>
+  </figure>
+
+  <p>
+    <strong>
+      Nome Completo: 
+    </strong>
+    <%= current_inn_owner.first_name %> <%= current_inn_owner.last_name %>
+  </p>
+
+  <p>
+    <strong>
+      Seu E-mail:
+    </strong>
+    <%= current_inn_owner.email %>
+  </p>
+
+  <p>
+    <strong>
+      CPF:
+    </strong>
+    <%= current_inn_owner.document %>
+  </p>
+</div>
