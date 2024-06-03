@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'Inns API' do
-  context 'GET /api/v1/inn/1' do
-    it 'lists details of a specific inn' do
+  context 'GET /api/v1/inns/search' do
+    it 'lists details of a specific inn based on registration_number' do
 
       inn_owner = InnOwner.create!(first_name: 'Joao', last_name: 'Almeida', 
                                    document: '53783222001', email: 'joao@email.com', password: '123456')
@@ -26,7 +26,7 @@ describe 'Inns API' do
       expect(json['qty_inn_rooms']).to eq 2
     end
 
-    it 'fails if the Inn is not found' do
+    it 'fails if the inn registration number is not found' do
       get '/api/v1/inns/search?rn=30638898000199'
 
       expect(response.status).to eq 404
