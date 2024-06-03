@@ -49,7 +49,7 @@ describe 'Inn owner register sale' do
     within('section#sales') do
       expect(page).to have_content 'Promoções'
       expect(page).to have_content 'Promoção de Primavera'
-      expect(page).to have_content "Válida de: #{I18n.l(1.day.from_now.to_date)} á #{I18n.l(1.day.from_now.to_date)}"
+      expect(page).to have_content "Válida de: #{I18n.l(1.day.from_now.to_date)} á #{I18n.l(1.week.from_now.to_date)}"
       expect(page).to have_content "Quarto: Quarto Térreo"
       expect(page).to have_content "Valor do desconto (em %): 50%"
     end
