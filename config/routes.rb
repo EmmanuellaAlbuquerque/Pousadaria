@@ -19,4 +19,12 @@ Rails.application.routes.draw do
 
     resources :inn_rooms, only: [:show, :edit, :update]
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :inns, only: [:show] do
+        get 'search', on: :collection
+      end
+    end
+  end
 end

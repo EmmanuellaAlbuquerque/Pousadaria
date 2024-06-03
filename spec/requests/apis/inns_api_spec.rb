@@ -10,7 +10,7 @@ describe 'Inns API' do
       inn_owner.create_inn!(name: 'Pousada do Almeidinha', registration_number: '30638898000199', description: 'Um bom lugar', 
                             address_attributes: { address: 'Rua X', number: '100', city: 'Manaus', state: 'AM', postal_code: '69067-080', neighborhood: 'Centro'})
 
-      get '/api/v1/inn/1'
+      get '/api/v1/inn/search?rn=30638898000199'
 
       expect(response.status).to eq 200
       expect(response.content_type).to include 'application/json'
