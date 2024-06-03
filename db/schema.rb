@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_27_141603) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_185812) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -100,10 +100,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_27_141603) do
     t.index ["inn_id"], name: "index_room_types_on_inn_id"
   end
 
+  create_table "sales", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "inn_room_id", null: false
+    t.integer "inn_id", null: false
+    t.integer "discount_percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["inn_id"], name: "index_sales_on_inn_id"
+    t.index ["inn_room_id"], name: "index_sales_on_inn_room_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "inns"
   add_foreign_key "inn_rooms", "inns"
   add_foreign_key "inns", "inn_owners"
   add_foreign_key "room_types", "inns"
+  add_foreign_key "sales", "inn_rooms"
+  add_foreign_key "sales", "inns"
 end
