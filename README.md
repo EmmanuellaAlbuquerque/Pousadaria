@@ -61,3 +61,10 @@ Para conhecer mais sobre este comando, leia seu código fonte na pasta `bin` do 
 ```shell
  rake spec
 ```
+
+## Sobre o teste
+main - default project
+
+v0 - treina dev test (1h30min)
+
+v1 - home test (1h30min)
